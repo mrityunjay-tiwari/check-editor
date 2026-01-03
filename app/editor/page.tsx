@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { SlashCommandExtension } from "@/components/tiptap-extension/slash-command-extension"
+import {SlashCommandExtension} from "@/components/tiptap-extension/slash-command-extension";
 import {EditorContent, EditorContext, useEditor} from "@tiptap/react";
 import {StarterKit} from "@tiptap/starter-kit";
-import { MySlashMenu } from "@/components/tiptap-ui/my-slash-menu"
-import { SuggestionMenu } from "@/components/tiptap-ui-utils/suggestion-menu";
-import { SlashDropdownMenu } from "@/components/tiptap-ui/slash-dropdown-menu";
+import {MySlashMenu} from "@/components/tiptap-ui/my-slash-menu";
+import {SuggestionMenu} from "@/components/tiptap-ui-utils/suggestion-menu";
+import {SlashDropdownMenu} from "@/components/tiptap-ui/slash-dropdown-menu";
 
 function MySlashMenu2() {
   const editor = useEditor({
@@ -42,21 +42,20 @@ function MySlashMenu2() {
 }
 
 export default function MyEditor() {
-    const editor = useEditor({
-  immediatelyRender: false,
-  extensions: [
-    StarterKit,
-    SlashCommandExtension, // ← REQUIRED
-    
-  ],
-  content: "",
-})
+  const editor = useEditor({
+    immediatelyRender: false,
+    extensions: [
+      StarterKit,
+      SlashCommandExtension, // ← REQUIRED
+    ],
+    content: "",
+  });
 
-if (!editor) return null
+  if (!editor) return null;
 
-return (
+  return (
     <EditorContext.Provider value={{editor}}>
-        <div className="relative">
+      <div className="relative">
         {/* Slash menu */}
         <MySlashMenu2 />
 
@@ -64,5 +63,5 @@ return (
         <EditorContent editor={editor} />
       </div>
     </EditorContext.Provider>
-
-)}
+  );
+}
