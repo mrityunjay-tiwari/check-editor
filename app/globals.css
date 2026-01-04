@@ -126,3 +126,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #727477;
+  pointer-events: none;
+  height: 0;
+  text-decoration: underline;
+}
